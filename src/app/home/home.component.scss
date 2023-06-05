@@ -1,0 +1,49 @@
+.carousel-item img {
+    width: 100%;
+    height: 961px;
+}
+
+.my_bg {
+    position: relative !important;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.title {
+    position: absolute !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 28%;
+    left:29%;
+    z-index: 2;
+    text-align: center;
+}
+.title p{
+    color:white!important;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid white;
+    padding: 10px 30px;
+}
+.title h1{
+    color:white!important;
+    font-family: 'Dancing Script', cursive;
+    font-size: 150px;
+}
+.title span{
+    color: #E52B34!important;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding-top: 30px;
+}
+.title .line{
+    background-color: #E52B34;
+    width: 100px;
+    height: 2px;
+}
+.title i{
+    color: #E52B34!important;
+}

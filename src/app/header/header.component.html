@@ -1,0 +1,53 @@
+<div class="my_navbar w-100" (scroll)="onWindowScroll()">
+    <header class="info_header">
+        <div class="container d-flex flex-wrap justify-content-between pt-3">
+            <div>
+                <ul class="my_info d-flex justify-content-center">
+                    <li>Phone no:</li>
+                    <li>+00 1234 567</li>
+                    <li>or email us:</li>
+                    <li>emailsample@email.com</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="d-flex work_info">
+                    <li>Mon-Fri</li>
+                    <li>/ 9:00-21:00, </li>
+                    <li>Sat - Sun</li>
+                    <li>/ 10:00-20:00</li>
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-solid fa-basketball"></i></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+
+    <header class="scd_header py-3 mb-4">
+        <div class="container d-flex flex-wrap justify-content-between">
+            <div>
+                <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4 frs_title">Cook<span class="scd_title"><i class="fa-regular fa-heart"></i>Love</span></span>
+                </a>
+            </div>
+            <div>
+                <ul class="nav me-auto pt-1">
+                    <li class="nav-item"><a href="#" class="nav-link px-2"  routerLink="home"  [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="router-link-active">HOME</a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link  px-2"  routerLink="about" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="router-link-active">ABOUT</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link  px-2"  routerLink="chef" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="router-link-active">CHEF</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link  px-2"  routerLink="menu" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="router-link-active">MENU</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link  px-2"  routerLink="reservation" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="router-link-active">RESERVATION</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link  px-2"  routerLink="blog" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="router-link-active">BLOG</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link  px-2"  routerLink="contact" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="router-link-active">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>

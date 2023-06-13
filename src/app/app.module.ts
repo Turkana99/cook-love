@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,6 +10,11 @@ import { MenuComponent } from './menu/menu.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
+import { MaterialModule } from './material.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FagComponent } from './fag/fag.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,17 @@ import { ContactComponent } from './contact/contact.component';
     MenuComponent,
     ReservationComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    FagComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    MaterialModule,
+    AppRoutingModule,
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden!important;}
+
+
+.sub_title{
+  color: #e52b34;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+}
+.title{
+  font-size: 50px!important;
+  font-family: 'Roboto', sans-serif;
+  color: #16151a;
+  font-weight: bold!important;
+}
+.my_text{
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  line-height: 30px!important;
+}
+.my_btn{
+  background-color: #e52b34;
+  color: white;
+  padding: 7px 20px;
+  border: none;
+}
+.my_btn:hover{
+  background-color: #16151a;
+  color: #e52b34;
+}
+app-menu .mdc-tab-indicator__content--underline{
+border-color:#e52b34!important;
+}
+
+

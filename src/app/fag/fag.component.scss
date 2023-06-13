@@ -21,4 +21,6 @@
 .sub_title,.title{
   text-align: center;
 }
-
+::ng-deep .mat-expansion-panel-body i{
+  color: #e52b34!important;
+}

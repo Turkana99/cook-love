@@ -33,6 +33,16 @@
   font-weight: bold;
   font-size: 30px;
 }
-::ng-deep  .mdc-text-field--outlined {
-  color: #e52b34;
+
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+/* Border */
+::ng-deep .cdk-text-field-autofill-monitored {
+  caret-color: #e52b34;
+}
+
+.mat-mdc-form-field  textarea{
+  padding: 10px 0px;
 }

@@ -8,6 +8,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ContactComponent } from './contact/contact.component';
 import { FagComponent } from './fag/fag.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'fag', component: FagComponent },
+  { path: 'blog-detail', component: BlogDetailComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }
 ];
 

@@ -1,5 +1,5 @@
 .about{
-  background-image: url(../../assets/images/bg_5.jpg);
+  background-image: url(../../assets/images/plate.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -18,10 +18,10 @@
   color: white;
   font-size: 20px;
 }
-.sub_title,.title{
-  text-align: center;
+.title,.sub_title{
+  text-align: center!important;
 }
-.mini_title h1{
-  font-weight: bold!important;
+.blog_text{
+  line-height: 20px;
+  font-weight: 300;
 }
-

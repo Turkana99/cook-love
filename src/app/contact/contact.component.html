@@ -40,22 +40,69 @@
       </div>
       <div class="col-lg-5">
         <div>
-          <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput placeholder="Please enter your name" />
-            <mat-icon matSuffix>account_circle</mat-icon>
-          </mat-form-field><br>
-          <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Please enter your email" />
-            <mat-icon matSuffix> email</mat-icon>
-          </mat-form-field><br>
-          <mat-form-field class="outline">
-            <mat-label>Message</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-            <mat-icon matSuffix> text_fields</mat-icon>
-          </mat-form-field><br>
-        <button class="my_btn">Send</button>
+          <form
+            class="d-flex flex-column"
+            [formGroup]="contactForm"
+            (ngSubmit)="Send()"
+          >
+            <mat-form-field appearance="outline" color="accent">
+              <mat-label>Name</mat-label>
+              <input
+                formControlName="name"
+                matInput
+                placeholder="Please enter your name"
+              />
+              <mat-icon matSuffix>account_circle</mat-icon>
+              <mat-hint
+                *ngIf="contactForm.controls['name'].errors?.['required'] && ((contactForm.controls['name'].dirty &&
+            contactForm.controls['name'].invalid) ||
+          contactForm.controls['name'].touched)"
+                >*This field should not be empty</mat-hint
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+              <mat-label>Email</mat-label>
+              <input
+                formControlName="email"
+                matInput
+                placeholder="Please enter your email"
+              />
+              <mat-icon matSuffix> email</mat-icon>
+              <mat-hint
+                *ngIf="contactForm.controls['email'].errors?.['required'] && ((contactForm.controls['email'].dirty &&
+              contactForm.controls['email'].invalid) ||
+            contactForm.controls['email'].touched)"
+                >*This field should not be empty</mat-hint
+              >
+              <mat-hint
+                *ngIf="contactForm.controls['email'].errors?.['email'] && ((contactForm.controls['email'].dirty &&
+              contactForm.controls['email'].invalid) ||
+            contactForm.controls['email'].touched)"
+                >*Please provide a valid email address</mat-hint
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+              <mat-label>Message</mat-label>
+              <textarea
+                (input)="test()"
+                formControlName="message"
+                matInput
+                placeholder="Ex. It makes me feel..."
+              ></textarea>
+              <mat-icon matSuffix> text_fields</mat-icon>
+              <mat-hint
+                *ngIf="contactForm.controls['message'].errors?.['required'] && ((contactForm.controls['message'].dirty &&
+            contactForm.controls['message'].invalid) ||
+          contactForm.controls['message'].touched)"
+                >*This field should not be empty</mat-hint
+              >
+              <mat-hint
+                *ngIf="contactForm.controls['message'].errors?.['maxlength']"
+                >*Your message can't exceed 250 characters</mat-hint
+              >
+            </mat-form-field>
+            <button type="submit" class="my_btn pt-2 pb-2">Send</button>
+          </form>
         </div>
       </div>
     </div>

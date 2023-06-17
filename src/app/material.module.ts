@@ -40,6 +40,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     MatPaginatorModule,
     MatSelectModule,
     MatButtonModule,
@@ -91,6 +92,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTreeModule,
     MatIconModule,
     MatMenuModule,
+  ],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
 })
 export class MaterialModule {}

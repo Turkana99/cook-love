@@ -1,1 +1,183 @@
-<p>reservation works!</p>
+<!--Jumbotron-->
+<div class="about d-flex flex-column align-items-center justify-content-end">
+  <h2>RESERVATION</h2>
+  <ul class="menu_list d-flex">
+    <li><a routerLink="/home">Home ></a></li>
+    <li><a routerLink="/reservation">&nbsp;Reservation</a></li>
+  </ul>
+</div>
+
+<!--Reservation-->
+<div class="container pt-5 pb-5">
+  <div class="mini_title">
+    <h1>BOOK YOUR TABLE</h1>
+  </div>
+  <div class="d-flex flex-column">
+    <form
+      class="d-flex flex-column"
+      [formGroup]="reservationForm"
+      (ngSubmit)="Send()"
+    >
+      <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-4" appearance="outline" color="accent">
+          <mat-label>Name</mat-label>
+          <input
+            formControlName="name"
+            matInput
+            placeholder="Please enter your name"
+          />
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-hint
+            *ngIf="reservationForm.controls['name'].errors?.['required'] && ((reservationForm.controls['name'].dirty &&
+        reservationForm.controls['name'].invalid) ||
+        reservationForm.controls['name'].touched)"
+            >*This field should not be empty</mat-hint
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12 col-md-6 col-lg-4" appearance="outline" color="accent">
+          <mat-label>Email</mat-label>
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Please enter your email"
+          />
+          <mat-icon matSuffix> email</mat-icon>
+          <mat-hint
+            *ngIf="reservationForm.controls['email'].errors?.['required'] && ((reservationForm.controls['email'].dirty &&
+          reservationForm.controls['email'].invalid) ||
+          reservationForm.controls['email'].touched)"
+            >*This field should not be empty</mat-hint
+          >
+          <mat-hint
+            *ngIf="reservationForm.controls['email'].errors?.['email'] && ((reservationForm.controls['email'].dirty &&
+          reservationForm.controls['email'].invalid) ||
+          reservationForm.controls['email'].touched)"
+            >*Please provide a valid email address</mat-hint
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12 col-md-6 col-lg-4" appearance="outline" color="accent">
+          <mat-label>Phone</mat-label>
+          <input
+            prefix="+994"
+            mask="(00) 000 00 00"
+            matInput
+            id="profile-email"
+            formControlName="phone"
+            placeholder="Please enter your phone number"
+          />
+          <mat-icon matSuffix>phone_iphone</mat-icon>
+          <mat-hint
+            *ngIf="reservationForm.controls['phone'].errors?.['required'] && ((reservationForm.controls['phone'].dirty &&
+        reservationForm.controls['phone'].invalid) ||
+        reservationForm.controls['phone'].touched)"
+            >*This field should not be empty</mat-hint
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12 col-md-6 col-lg-4" appearance="outline" color="accent">
+          <mat-label>Check-in</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            formControlName="date"
+            matInput
+            placeholder="Please enter your check-in date"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-hint
+            *ngIf="reservationForm.controls['date'].errors?.['required'] && ((reservationForm.controls['date'].dirty &&
+        reservationForm.controls['date'].invalid) ||
+        reservationForm.controls['date'].touched)"
+            >*This field should not be empty</mat-hint
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12 col-md-6 col-lg-4" appearance="outline" color="accent">
+          <mat-label>Choose a time</mat-label>
+          <mat-select formControlName="time">
+            <mat-option value="10:00">10:00</mat-option>
+            <mat-option value="10:30">10:30</mat-option>
+            <mat-option value="11:00">11:00</mat-option>
+            <mat-option value="11:30">11:30</mat-option>
+            <mat-option value="12:00">12:00</mat-option>
+            <mat-option value="12:30">12:30</mat-option>
+            <mat-option value="13:00">13:00</mat-option>
+            <mat-option value="13:30">13:30</mat-option>
+            <mat-option value="14:00">14:00</mat-option>
+            <mat-option value="14:30">14:30</mat-option>
+            <mat-option value="15:00">15:00</mat-option>
+            <mat-option value="15:30">15:30</mat-option>
+            <mat-option value="16:00">16:00</mat-option>
+            <mat-option value="16:30">16:30</mat-option>
+            <mat-option value="17:00">17:00</mat-option>
+            <mat-option value="17:30">17:30</mat-option>
+            <mat-option value="18:00">18:00</mat-option>
+            <mat-option value="18:30">18:30</mat-option>
+            <mat-option value="19:00">19:00</mat-option>
+            <mat-option value="19:30">19:30</mat-option>
+            <mat-option value="20:00">20:00</mat-option>
+            <mat-option value="20:30">20:30</mat-option>
+            <mat-option value="21:00">21:00</mat-option>
+            <mat-option value="21:30">21:30</mat-option>
+            <mat-option value="22:00">22:00</mat-option>
+            <mat-option value="22:30">22:30</mat-option>
+            <mat-option value="23:00">23:00</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>access_time</mat-icon>
+          <mat-hint
+            *ngIf="reservationForm.controls['time'].errors?.['required'] && ((reservationForm.controls['time'].dirty &&
+        reservationForm.controls['time'].invalid) ||
+        reservationForm.controls['time'].touched)"
+            >*This field should not be empty</mat-hint
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12 col-md-6 col-lg-4" appearance="outline" color="accent">
+          <mat-label>Guest</mat-label>
+          <mat-select formControlName="guest">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+            <mat-option value="7">7</mat-option>
+            <mat-option value="8">8</mat-option>
+            <mat-option value="9">9</mat-option>
+            <mat-option value="10">10</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>person_add</mat-icon>
+          <mat-hint
+            *ngIf="reservationForm.controls['guest'].errors?.['required'] && ((reservationForm.controls['guest'].dirty &&
+        reservationForm.controls['guest'].invalid) ||
+        reservationForm.controls['guest'].touched)"
+            >*This field should not be empty</mat-hint
+          >
+        </mat-form-field>
+        <mat-form-field class="col-12" appearance="outline" color="accent">
+          <mat-label>Note</mat-label>
+          <textarea
+            formControlName="message"
+            matInput
+            placeholder="Ex. It makes me feel..."
+          ></textarea>
+          <mat-icon matSuffix> text_fields</mat-icon>
+          <mat-hint
+            *ngIf="reservationForm.controls['message'].errors?.['required'] && ((reservationForm.controls['message'].dirty &&
+          reservationForm.controls['message'].invalid) ||
+          reservationForm.controls['message'].touched)"
+            >*This field should not be empty</mat-hint
+          >
+          <mat-hint
+            *ngIf="reservationForm.controls['message'].errors?.['maxlength']"
+            >*Your message can't exceed 250 characters</mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="w-100" align="end">
+        <button class="my_btn" (click)="openDialog()" [disabled]="reservationForm.invalid">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

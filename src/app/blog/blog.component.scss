@@ -28,3 +28,8 @@
 font-weight: bold;
 font-size: 24px;
 }
+
+.example-card:hover{
+  outline: 2px dashed #e52b34;
+  transition: 0.4s;
+}
